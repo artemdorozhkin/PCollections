@@ -70,6 +70,16 @@ Public Function FindLastIndex(ByRef SourceCollection As Collection, ByVal Item A
     FindLastIndex = -1
 End Function
 
+Public Function FromArray(ByRef SourceArray As Variant) As Collection
+    Dim Buffer As Collection: Set Buffer = New Collection
+    Dim Item As Variant
+    For Each Item In SourceArray
+        Buffer.Add Item
+    Next
+
+    Set FromArray = Buffer
+End Function
+
 Public Function ItemExists(ByRef SourceCollection As Collection, ByVal Item As Variant) As Boolean
     Dim Check As Variant
     For Each Check In SourceCollection
@@ -155,6 +165,10 @@ Public Function Pop(ByRef SourceCollection As Collection) As Variant
     End If
 
     SourceCollection.Remove Index:=LastIndex
+End Function
+
+Public Function Split(ByVal SourceText As String, Optional ByVal Delimiter As String = " ") As Collection
+    Set Split = PCollections.FromArray(Strings.Split(SourceText, Delimiter))
 End Function
 
 Public Function Reverse(ByRef SourceCollection As Collection) As Collection
