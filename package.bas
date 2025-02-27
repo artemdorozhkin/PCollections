@@ -3,7 +3,7 @@ Attribute VB_Name = "package"
 '{
 '  "name": "PCollections",
 '  "version": "1.0.0",
-'  "description": "",
+'  "description": "Advanced VBA Collection Utilities",
 '  "author": "artemdorozhkin",
 '  "git": "https://github.com/artemdorozhkin/pcollection.git"
 '}
